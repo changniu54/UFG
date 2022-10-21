@@ -25,6 +25,7 @@ parser.add_argument('--class_embedding', default='att')
 parser.add_argument('--syn_num', type=int, default=100, help='number features to generate per class')
 parser.add_argument('--preprocessing', action='store_true', default=False,
                     help='enbale MinMaxScaler on visual features')
+parser.add_argument('--validation', action='store_true', default=False)
 parser.add_argument('--standardization', action='store_true', default=False)
 parser.add_argument('--workers', type=int, help='number of data loading workers', default=2)
 parser.add_argument('--batch_size', type=int, default=100, help='input batch size')
@@ -57,7 +58,6 @@ parser.add_argument('--nepoch', type=int, default=100, help='number of epochs to
 parser.add_argument('--clb_time', type=int, default=10, help='number of epochs to train')
 parser.add_argument('--clb_ratio', type=float, default=0.4, help='the ratio to mix up neighbor class')
 parser.add_argument('--neighbor_num', type=int, default=2, help='the number of neighbor in clb')
-
 opt = parser.parse_args()
 os.environ["CUDA_VISIBLE_DEVICES"] = opt.gpu_id
 
